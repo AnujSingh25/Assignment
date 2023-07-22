@@ -5,8 +5,8 @@ import {
     TouchableOpacity,
     StyleSheet,
 } from 'react-native'
-import Icon from 'react-native-vector-icons/Ionicons'
 import { useNavigation } from "@react-navigation/native"
+import { MaterialIconsIcon } from "../../common"
 
 const Header = () => {
 
@@ -15,7 +15,7 @@ const Header = () => {
     return (
         <View
             style={{
-                backgroundColor: 'blue',
+                backgroundColor: "#625df5",
                 height: 47,
                 width: '100%',
                 borderBottomColor: 'white',
@@ -23,7 +23,7 @@ const Header = () => {
             }}
         >
             <StatusBar
-                backgroundColor={'blue'}
+                backgroundColor={"#625df5"}
                 barStyle="light-content"
             />
 
@@ -32,20 +32,20 @@ const Header = () => {
                 <TouchableOpacity
                     onPress={() => ''}
                     style={{ justifyContent: 'center' }}>
-                    <Icon
-                        name={'search'}
+                    <MaterialIconsIcon
+                        name={'layers'}
                         size={30}
-                        color='black'
+                        color={'white'}
                     />
                 </TouchableOpacity>
 
                 <TouchableOpacity
                     onPress={() => navigation.openDrawer()}
                     style={{ justifyContent: 'center' }}>
-                    <Icon
-                        name={'search'}
+                    <MaterialIconsIcon
+                        name={'height'}
                         size={30}
-                        color='black'
+                        color={'white'}
                     />
                 </TouchableOpacity>
             </View>

@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
-import { View, TouchableOpacity, StyleSheet } from 'react-native'
+import { View, TouchableOpacity, StyleSheet, Dimensions } from 'react-native'
+import MyText from './MyText'
 
+const { height, width } = Dimensions.get("screen")
 const CustomSwitch = ({ value, onChng }) => {
     const [active, setActive] = useState(value)
 
@@ -19,6 +21,9 @@ const CustomSwitch = ({ value, onChng }) => {
 
     return (
         <TouchableOpacity activeOpacity={0.8} onPress={handleChng}>
+            <View style={{ width: width / 4 }}>
+                <MyText>{active ? 'ACTIVE' : 'INACTIVE'}</MyText>
+            </View>
             <View style={switchStyle}>
                 <View style={cStyle} />
             </View>
@@ -29,7 +34,7 @@ const CustomSwitch = ({ value, onChng }) => {
 const styles = StyleSheet.create({
     container: {
         width: 50,
-        height: 30,
+        height: 20,
         borderRadius: 15,
         padding: 2,
         justifyContent: 'center',
@@ -40,8 +45,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row-reverse',
     },
     circle: {
-        width: 26,
-        height: 26,
+        width: 20,
+        height: 20,
         borderRadius: 13,
     },
     cActive: {
